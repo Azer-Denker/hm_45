@@ -1,3 +1,3 @@
-# HelloDjango
+# DjangoHomeWork
 
-Проект-блог для учебной группы Python-6.
+питон группа 6 Арел Азирет
