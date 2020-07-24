@@ -2,9 +2,9 @@ from django.db import models
 
 
 STATUS_CHOICES = [
-    ('new', 'Не модерировано'),
-    ('moderated', 'Модерировано'),
-    ('rejected', 'Отклонено')
+    ('new', 'Новая'),
+    ('moderated', 'В процессе'),
+    ('rejected', 'Сделано')
 ]
 
 

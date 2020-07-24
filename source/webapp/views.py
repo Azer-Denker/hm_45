@@ -4,12 +4,29 @@ from django.http import HttpResponseNotAllowed
 
 
 def index_view(request):
-    is_admin = request.GET.get('is_admin', None)
-    if is_admin:
-        data = Article.objects.all()
-    else:
-        data = Article.objects.filter(status='moderated')
+    data = Article.objects.all()
     return render(request, 'index.html', context={
+        'articles': data
+    })
+
+
+def tasks_new_view(request):
+    data = Article.objects.filter(status='new')
+    return render(request, 'new.html', context={
+        'articles': data
+    })
+
+
+def tasks_moderated_view(request):
+    data = Article.objects.filter(status='moderated')
+    return render(request, 'moderated.html', context={
+        'articles': data
+    })
+
+
+def tasks_rejected_view(request):
+    data = Article.objects.filter(status='rejected')
+    return render(request, 'rejected.html', context={
         'articles': data
     })
 
