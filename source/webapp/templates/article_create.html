@@ -6,35 +6,32 @@
 </head>
 <body>
 <a href="/">На главную</a>
-<h1>Create Article</h1>
+<h1>Задача</h1>
 
 <form action="/articles/add/" method="post">
     {% csrf_token %}
    
-    <label>Title:</label><br/>
+    <label>Название:</label><br/>
     <input type="text" name="title"/><br/>
    
-    <label>Text:</label><br/>
+    <label>Описание:</label><br/>
     <textarea name="text"></textarea><br/>
    
-    <label>Author:</label><br/>
+    <label>Афтор:</label><br/>
     <input type="text" name="author"/><br/>
 
-    <label for="id-status">Status:</label><br/>
-    <select name="status" id="id-status">
-{#        Вариант 1: обратиться по индексам в каждой паре #}
-{#        {% for choice in status_choices %}#}
-{#            <option value="{{ choice.0 }}">{{ choice.1 }}</option>#}
-{#        {% endfor %}#}
+    <label>Срок:</label><br/>
+    <input type="date" name="created_at"/><br/>
 
-{#        Вариант 2: сразу распаковать #}
+    <label for="id-status">Статус:</label><br/>
+    <select name="status" id="id-status">
         {% for value, label in status_choices %}
             <option value="{{ value }}">{{ label }}</option>
         {% endfor %}
     </select><br/>
 
     <br/>
-    <input type="submit" value="Send"/>
+    <input type="submit" value="Создать"/>
 </form>
 
 </body>
