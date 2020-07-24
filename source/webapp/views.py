@@ -41,7 +41,8 @@ def article_create_view(request):
         text = request.POST.get('text')
         author = request.POST.get('author')
         status = request.POST.get('status')
-        article = Article.objects.create(title=title, text=text, author=author, status=status)
+        created_at = request.POST.get('created_at')
+        article = Article.objects.create(title=title, text=text, author=author, status=status, created_at=created_at)
         context = {'article': article}
         return render(request, 'article_view.html', context)
     else:
